@@ -26,20 +26,7 @@ public:
     void store_data()
     {
         ofstream outf;
-        if(search_librarian(this->id, this->name))
-        {
-            cout<<"Data Already Exist...\n";
-            cout<<"Enter any Digit To exit..\n";
-            string lk;
-            cin>>lk;
-            return;
-        }
         outf.open("librarianData.txt",ios::app|ios::binary);
-        if(id == 0)
-        {
-            cout<<"No data to stror.\n";
-            return;
-        }
         outf.write((char*)this,sizeof(*this));
         outf.close();
     }
